@@ -11,11 +11,9 @@
 
 @interface MapViewController () <MKMapViewDelegate> {
 
-//    CLLocationManager* locationManager;
-//    __weak IBOutlet MKMapView* mapVieww;
-    MKPointAnnotation* annotation;
+    MKPointAnnotation* pointAnnotation;
     UILongPressGestureRecognizer* longPressGestureRecognizer;
-//    CLLocationCoordinate2D touchMapCoordinate;
+    
 }
 @end
 
@@ -36,7 +34,6 @@
                                                                 action:@selector(longPressGestureAction:)];
     [longPressGestureRecognizer setMinimumPressDuration:0.5f];
     [self.mapView addGestureRecognizer:longPressGestureRecognizer];
-//        [longPressGestureRecognizer release];
     
 }
 
@@ -52,6 +49,7 @@
     
     CGPoint touchPoint = [longPressGestureRecongnizer locationInView:self.mapView];
     self.touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    
     NSLog(@" %@", NSStringFromCGPoint(touchPoint));
     NSLog(@"%f, %f", self.touchMapCoordinate.latitude, self.touchMapCoordinate.longitude);
     
@@ -59,6 +57,7 @@
         return;
     
     self.subview = [[UIView alloc] initWithFrame:CGRectMake(touchPoint.x, touchPoint.y, 200, 250)];
+    self.subview.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height /2);
     [self.subview setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:self.subview];
     [self fadeInAnimation:self.view];
@@ -88,22 +87,31 @@
     [button setFrame:CGRectMake(0, 200, 200, 50)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-    [button addTarget:self action:@selector(addAnnotation:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(saveAnnotation:) forControlEvents:UIControlEventTouchUpInside];
     [self.mapView removeGestureRecognizer: longPressGestureRecognizer];
 }
 
 
 - (void) addAnnotations: (CLLocationCoordinate2D) touchMapCoordinate withText: (UITextView*) notificationTextView {
     
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = touchMapCoordinate;
-    point.title = @"Notification";
-    point.subtitle = notificationTextView.text;
-    [self.mapView addAnnotation:point];
+    pointAnnotation = [[MKPointAnnotation alloc] init];
+    pointAnnotation.coordinate = touchMapCoordinate;
+    pointAnnotation.title = @"Notification";
+    pointAnnotation.subtitle = notificationTextView.text;
+    
+   
+    MKPinAnnotationView *newAnnotation = [[MKPinAnnotationView alloc]initWithAnnotation:pointAnnotation reuseIdentifier:@"annotation"];
+    
+    newAnnotation.annotation = pointAnnotation;
+    newAnnotation.animatesDrop = YES;
+    [newAnnotation setAnnotation:pointAnnotation];
+    
+    [self.mapView addAnnotation:pointAnnotation];
+
 }
 
 
-- (IBAction)addAnnotation:(UIButton*)sender{
+- (void)saveAnnotation:(UIButton*)sender{
     
     [self.mapView addGestureRecognizer:longPressGestureRecognizer];
     [self.textView becomeFirstResponder];
@@ -114,7 +122,23 @@
 }
 
 
-
+- (void) removeAnnotationAction: (UIButton*) sender {
+    
+    UIAlertController* removeAnnotationAlertController = [UIAlertController alertControllerWithTitle:@"Remove annotation" message:@"Do you really want to remove this annotation ?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* removeAction = [UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self.mapView removeAnnotation:pointAnnotation];
+    }];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    [removeAnnotationAlertController addAction:removeAction];
+    [removeAnnotationAlertController addAction:cancelAction];
+    
+    [self presentViewController:removeAnnotationAlertController animated:YES completion:nil];
+    
+//    [self.mapView removeAnnotation:pointAnnotation];
+}
 
 #pragma mark - MKMapViewDelegate
 
@@ -123,6 +147,30 @@
     
     [self.mapView setCamera:camera animated:YES];
     
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    if ([annotation isKindOfClass: [MKUserLocation class]]) {
+        return nil;
+    }
+    
+    
+    MKPinAnnotationView* pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"identifer"];
+    pinAnnotationView.animatesDrop = YES;
+    pinAnnotationView.canShowCallout = YES;
+    
+    UIButton* removeAnnotationButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [removeAnnotationButton addTarget:self action:@selector(removeAnnotationAction:) forControlEvents:UIControlEventTouchUpInside];
+    pinAnnotationView.leftCalloutAccessoryView = removeAnnotationButton;
+    
+    
+    return pinAnnotationView;
+}
+
+- (void) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    
+    pointAnnotation = view.annotation;
 }
 
 /*
@@ -160,6 +208,12 @@
     transition.duration = 0.5f;
     transition.delegate = self;
     [aView.layer addAnimation:transition forKey:nil];
+}
+
+#pragma mark - Keyboard Hide
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 

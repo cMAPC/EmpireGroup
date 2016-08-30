@@ -19,7 +19,6 @@
 @property (strong, nonatomic) CLLocationManager* locationManager;
 @property (strong, nonatomic) UIView* subview;
 @property (strong, nonatomic) MKUserLocation* userLocation;
-@property (strong, nonatomic) NSString* notificationTextString;
 @property (strong, nonatomic) UITextView* textView ;
 @property (assign, nonatomic) CLLocationCoordinate2D touchMapCoordinate;
 
