@@ -13,6 +13,7 @@
 
     MKPointAnnotation* pointAnnotation;
     UILongPressGestureRecognizer* longPressGestureRecognizer;
+    MKDirections* directions;
     
 }
 @end
@@ -74,10 +75,11 @@
     
     self.textView = [[UITextView alloc] init];
     [self.subview addSubview:self.textView];
-    [self.textView setFrame:CGRectMake(10, 0, 190, 150)];
+    [self.textView setFrame:CGRectMake(10, 5, 190, 145)];
     [self.textView setBackgroundColor:[UIColor whiteColor]];
     [self.textView setFont:[UIFont systemFontOfSize:14.f]];
     self.textView.layer.cornerRadius = 10.f;
+    [self.textView becomeFirstResponder];
 
 
     
@@ -98,14 +100,6 @@
     pointAnnotation.coordinate = touchMapCoordinate;
     pointAnnotation.title = @"Notification";
     pointAnnotation.subtitle = notificationTextView.text;
-    
-   
-    MKPinAnnotationView *newAnnotation = [[MKPinAnnotationView alloc]initWithAnnotation:pointAnnotation reuseIdentifier:@"annotation"];
-    
-    newAnnotation.annotation = pointAnnotation;
-    newAnnotation.animatesDrop = YES;
-    [newAnnotation setAnnotation:pointAnnotation];
-    
     [self.mapView addAnnotation:pointAnnotation];
 
 }
@@ -128,6 +122,7 @@
     
     UIAlertAction* removeAction = [UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [self.mapView removeAnnotation:pointAnnotation];
+        [self.mapView removeOverlays:self.mapView.overlays];
     }];
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
@@ -137,13 +132,48 @@
     
     [self presentViewController:removeAnnotationAlertController animated:YES completion:nil];
     
-//    [self.mapView removeAnnotation:pointAnnotation];
 }
+
+
+- (void) buildPathAction:(UIButton*) sender {
+    
+    if ([directions isCalculating]) {
+        [directions cancel];
+    }
+    
+    MKDirectionsRequest* directionRequest = [[MKDirectionsRequest alloc] init];
+    directionRequest.source = [MKMapItem mapItemForCurrentLocation];
+    
+    MKPlacemark* placemarkDestination = [[MKPlacemark alloc] initWithCoordinate:self.touchMapCoordinate addressDictionary:nil];
+    
+    MKMapItem* destinationMapItem = [[MKMapItem alloc] initWithPlacemark:placemarkDestination];
+    
+    directionRequest.destination = destinationMapItem;
+    
+    directionRequest.transportType = MKDirectionsTransportTypeWalking;
+    
+    directions = [[MKDirections alloc] initWithRequest:directionRequest];
+    
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * _Nullable response, NSError * _Nullable error) {
+        
+        [self.mapView removeOverlays:[self.mapView overlays]];
+        
+        NSMutableArray* routesPolyline = [NSMutableArray array];
+        
+        for (MKRoute* route in response.routes) {
+            [routesPolyline addObject:route.polyline];
+        }
+        
+        [self.mapView addOverlays:routesPolyline level:MKOverlayLevelAboveRoads];
+        
+    }];
+}
+
 
 #pragma mark - MKMapViewDelegate
 
 - (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:1500];
+    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
     
     [self.mapView setCamera:camera animated:YES];
     
@@ -155,14 +185,26 @@
         return nil;
     }
     
-    
     MKPinAnnotationView* pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"identifer"];
     pinAnnotationView.animatesDrop = YES;
     pinAnnotationView.canShowCallout = YES;
+
+//    CUSTOM PIN IMAGE
+//    pinAnnotationView.image = [UIImage imageNamed:@"gps-3.png"];
+//    pinAnnotationView.centerOffset = CGPointMake(0, -32);
+//    pinAnnotationView.layer.shadowColor = [UIColor blackColor].CGColor;
+//    pinAnnotationView.layer.shadowOffset = CGSizeMake(20, 0);
+//    pinAnnotationView.layer.shadowOpacity = 0.5;
+//    pinAnnotationView.layer.shadowRadius = 3.0;
     
     UIButton* removeAnnotationButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     [removeAnnotationButton addTarget:self action:@selector(removeAnnotationAction:) forControlEvents:UIControlEventTouchUpInside];
     pinAnnotationView.leftCalloutAccessoryView = removeAnnotationButton;
+
+//    PATH BUTTON
+    UIButton* pathAnnotationButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [pathAnnotationButton addTarget:self action:@selector(buildPathAction:) forControlEvents:UIControlEventTouchUpInside];
+    pinAnnotationView.rightCalloutAccessoryView = pathAnnotationButton;
     
     
     return pinAnnotationView;
@@ -173,33 +215,21 @@
     pointAnnotation = view.annotation;
 }
 
-/*
-- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.005;
-    span.longitudeDelta = 0.005;
-    CLLocationCoordinate2D location;
-    location.latitude = aUserLocation.coordinate.latitude;
-    location.longitude = aUserLocation.coordinate.longitude;
-    region.span = span;
-    region.center = location;
-    [aMapView setRegion:region animated:YES];
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolylineRenderer* polylineRenderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+        polylineRenderer.lineWidth = 2.f;
+        polylineRenderer.strokeColor = [UIColor redColor];
+        
+        return polylineRenderer;
+    }
+    return nil;
 }
-*/
+
 
 #pragma mark - Animation
-
-- (void) notificationSubviewAnimation {
-    [UIView animateWithDuration:0.3
-                          delay:0.2
-                        options: UIViewAnimationOptionShowHideTransitionViews
-                     animations:^{
-                         self.subview.alpha = 0;
-                     }completion:^(BOOL finished){
-                         [self.subview removeFromSuperview];
-                     }];
-}
 
 -(void)fadeInAnimation:(UIView *)aView {
     
@@ -227,5 +257,12 @@
 }
 */
 
+#pragma mark - Dealloc
+
+- (void)dealloc {
+    
+    if([directions isCalculating])
+        [directions cancel];
+}
 
 @end

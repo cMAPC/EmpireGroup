@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470028D61D76130700410370 /* relation_1813297.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 470028D51D76130700410370 /* relation_1813297.gpx */; };
 		473FED621D6EE0CD0054A5CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473FED611D6EE0CD0054A5CA /* MapKit.framework */; };
 		473FED6D1D6EE5C70054A5CA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473FED6C1D6EE5C70054A5CA /* MapViewController.m */; };
 		473FED6F1D6EFD340054A5CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473FED6E1D6EFD340054A5CA /* CoreLocation.framework */; };
+		4743525D1D79B0BD005D3C29 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743525C1D79B0BD005D3C29 /* RegisterViewController.m */; };
 		47B9286C1D6E18A5003864DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B9286B1D6E18A5003864DC /* main.m */; };
 		47B9286F1D6E18A5003864DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B9286E1D6E18A5003864DC /* AppDelegate.m */; };
 		47B928721D6E18A5003864DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B928711D6E18A5003864DC /* ViewController.m */; };
@@ -38,10 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		470028D51D76130700410370 /* relation_1813297.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = relation_1813297.gpx; sourceTree = "<group>"; };
 		473FED611D6EE0CD0054A5CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		473FED6B1D6EE5C70054A5CA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		473FED6C1D6EE5C70054A5CA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		473FED6E1D6EFD340054A5CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4743525B1D79B0BD005D3C29 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../RegisterViewController.h; sourceTree = "<group>"; };
+		4743525C1D79B0BD005D3C29 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ../RegisterViewController.m; sourceTree = "<group>"; };
 		47B928671D6E18A5003864DC /* loginapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loginapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B9286B1D6E18A5003864DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47B9286D1D6E18A5003864DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,11 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47B9285E1D6E18A5003864DC = {
+		4730907D1D86DD2D006C13F6 /* Framework's */ = {
 			isa = PBXGroup;
 			children = (
 				473FED6E1D6EFD340054A5CA /* CoreLocation.framework */,
 				473FED611D6EE0CD0054A5CA /* MapKit.framework */,
+			);
+			name = "Framework's";
+			sourceTree = "<group>";
+		};
+		47B9285E1D6E18A5003864DC = {
+			isa = PBXGroup;
+			children = (
+				470028D51D76130700410370 /* relation_1813297.gpx */,
+				4730907D1D86DD2D006C13F6 /* Framework's */,
 				47B928691D6E18A5003864DC /* loginapp */,
 				47B928831D6E18A5003864DC /* loginappTests */,
 				47B9288E1D6E18A5003864DC /* loginappUITests */,
@@ -123,6 +137,8 @@
 				47B9286A1D6E18A5003864DC /* Supporting Files */,
 				473FED6B1D6EE5C70054A5CA /* MapViewController.h */,
 				473FED6C1D6EE5C70054A5CA /* MapViewController.m */,
+				4743525B1D79B0BD005D3C29 /* RegisterViewController.h */,
+				4743525C1D79B0BD005D3C29 /* RegisterViewController.m */,
 			);
 			path = loginapp;
 			sourceTree = "<group>";
@@ -221,6 +237,11 @@
 					47B928661D6E18A5003864DC = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6GBUCRJMXQ;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					47B9287F1D6E18A5003864DC = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -260,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B9287A1D6E18A5003864DC /* LaunchScreen.storyboard in Resources */,
+				470028D61D76130700410370 /* relation_1813297.gpx in Resources */,
 				47B928771D6E18A5003864DC /* Assets.xcassets in Resources */,
 				47B928751D6E18A5003864DC /* Main.storyboard in Resources */,
 			);
@@ -286,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4743525D1D79B0BD005D3C29 /* RegisterViewController.m in Sources */,
 				47B928721D6E18A5003864DC /* ViewController.m in Sources */,
 				47B9286F1D6E18A5003864DC /* AppDelegate.m in Sources */,
 				47B9286C1D6E18A5003864DC /* main.m in Sources */,
@@ -432,10 +455,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = loginapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcelspinu.loginapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -443,10 +468,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = loginapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcelspinu.loginapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
