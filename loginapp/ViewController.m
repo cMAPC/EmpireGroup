@@ -19,7 +19,7 @@
     
     loginDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"user", nil]
                                                   forKeys:[NSArray arrayWithObjects:@"user", nil]];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +43,7 @@
 
 - (IBAction)logInButton:(UIButton *)sender {
     
-   
+    
     if ([[loginDictionary objectForKey: self.passwordField.text] isEqualToString:self.usernameField.text]) {
         NSLog(@"Succes");
     } else {
@@ -52,7 +52,7 @@
         NSLog(@"%@", self.passwordField.text);
         
         UIAlertController* loginErrorAlertController = [UIAlertController alertControllerWithTitle:@"Error Signing In"
-                                                                                 message:@"The user name or password is incorrect"preferredStyle:UIAlertControllerStyleAlert];
+                                                                                           message:@"The user name or password is incorrect"preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* loginErrorAlertAction = [UIAlertAction actionWithTitle:@"OK"
                                                                         style:UIAlertActionStyleDefault

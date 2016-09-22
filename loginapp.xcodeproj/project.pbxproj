@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		470028D61D76130700410370 /* relation_1813297.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 470028D51D76130700410370 /* relation_1813297.gpx */; };
+		470F28441D92DA970082E8CA /* TimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F28431D92DA970082E8CA /* TimelineTableViewController.m */; };
+		470F28481D92DB090082E8CA /* TimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F28461D92DB090082E8CA /* TimelineTableViewCell.m */; };
+		470F28491D92DB090082E8CA /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470F28471D92DB090082E8CA /* TimelineTableViewCell.xib */; };
+		473090831D86E59C006C13F6 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473090821D86E59C006C13F6 /* ChatViewController.m */; };
+		473090861D86EA8A006C13F6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473090851D86EA8A006C13F6 /* ProfileViewController.m */; };
 		473FED621D6EE0CD0054A5CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473FED611D6EE0CD0054A5CA /* MapKit.framework */; };
 		473FED6D1D6EE5C70054A5CA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473FED6C1D6EE5C70054A5CA /* MapViewController.m */; };
 		473FED6F1D6EFD340054A5CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473FED6E1D6EFD340054A5CA /* CoreLocation.framework */; };
 		4743525D1D79B0BD005D3C29 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743525C1D79B0BD005D3C29 /* RegisterViewController.m */; };
+		4748428B1D9442AC00150A55 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4748428A1D9442AC00150A55 /* TestViewController.m */; };
 		47B9286C1D6E18A5003864DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B9286B1D6E18A5003864DC /* main.m */; };
 		47B9286F1D6E18A5003864DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B9286E1D6E18A5003864DC /* AppDelegate.m */; };
 		47B928721D6E18A5003864DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B928711D6E18A5003864DC /* ViewController.m */; };
@@ -41,12 +47,23 @@
 
 /* Begin PBXFileReference section */
 		470028D51D76130700410370 /* relation_1813297.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = relation_1813297.gpx; sourceTree = "<group>"; };
+		470F28421D92DA970082E8CA /* TimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewController.h; sourceTree = "<group>"; };
+		470F28431D92DA970082E8CA /* TimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewController.m; sourceTree = "<group>"; };
+		470F28451D92DB090082E8CA /* TimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCell.h; sourceTree = "<group>"; };
+		470F28461D92DB090082E8CA /* TimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewCell.m; sourceTree = "<group>"; };
+		470F28471D92DB090082E8CA /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
+		473090811D86E59C006C13F6 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = ../ChatViewController.h; sourceTree = "<group>"; };
+		473090821D86E59C006C13F6 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewController.m; path = ../ChatViewController.m; sourceTree = "<group>"; };
+		473090841D86EA8A006C13F6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
+		473090851D86EA8A006C13F6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
 		473FED611D6EE0CD0054A5CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		473FED6B1D6EE5C70054A5CA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		473FED6C1D6EE5C70054A5CA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		473FED6E1D6EFD340054A5CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4743525B1D79B0BD005D3C29 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../RegisterViewController.h; sourceTree = "<group>"; };
 		4743525C1D79B0BD005D3C29 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ../RegisterViewController.m; sourceTree = "<group>"; };
+		474842891D9442AC00150A55 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		4748428A1D9442AC00150A55 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		47B928671D6E18A5003864DC /* loginapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loginapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B9286B1D6E18A5003864DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47B9286D1D6E18A5003864DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +109,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		470F28401D92DA170082E8CA /* TimelineTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				470F28421D92DA970082E8CA /* TimelineTableViewController.h */,
+				470F28431D92DA970082E8CA /* TimelineTableViewController.m */,
+				470F28411D92DA170082E8CA /* TableViewCell */,
+			);
+			name = TimelineTableViewController;
+			path = ../TimelineTableViewController;
+			sourceTree = "<group>";
+		};
+		470F28411D92DA170082E8CA /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				470F28451D92DB090082E8CA /* TimelineTableViewCell.h */,
+				470F28461D92DB090082E8CA /* TimelineTableViewCell.m */,
+				470F28471D92DB090082E8CA /* TimelineTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		4730907D1D86DD2D006C13F6 /* Framework's */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +142,8 @@
 		47B9285E1D6E18A5003864DC = {
 			isa = PBXGroup;
 			children = (
+				474842891D9442AC00150A55 /* TestViewController.h */,
+				4748428A1D9442AC00150A55 /* TestViewController.m */,
 				470028D51D76130700410370 /* relation_1813297.gpx */,
 				4730907D1D86DD2D006C13F6 /* Framework's */,
 				47B928691D6E18A5003864DC /* loginapp */,
@@ -126,19 +166,24 @@
 		47B928691D6E18A5003864DC /* loginapp */ = {
 			isa = PBXGroup;
 			children = (
+				470F28401D92DA170082E8CA /* TimelineTableViewController */,
 				47B9286D1D6E18A5003864DC /* AppDelegate.h */,
 				47B9286E1D6E18A5003864DC /* AppDelegate.m */,
-				47B928701D6E18A5003864DC /* ViewController.h */,
-				47B928711D6E18A5003864DC /* ViewController.m */,
 				47B928731D6E18A5003864DC /* Main.storyboard */,
 				47B928761D6E18A5003864DC /* Assets.xcassets */,
 				47B928781D6E18A5003864DC /* LaunchScreen.storyboard */,
 				47B9287B1D6E18A5003864DC /* Info.plist */,
 				47B9286A1D6E18A5003864DC /* Supporting Files */,
+				47B928701D6E18A5003864DC /* ViewController.h */,
+				47B928711D6E18A5003864DC /* ViewController.m */,
 				473FED6B1D6EE5C70054A5CA /* MapViewController.h */,
 				473FED6C1D6EE5C70054A5CA /* MapViewController.m */,
 				4743525B1D79B0BD005D3C29 /* RegisterViewController.h */,
 				4743525C1D79B0BD005D3C29 /* RegisterViewController.m */,
+				473090811D86E59C006C13F6 /* ChatViewController.h */,
+				473090821D86E59C006C13F6 /* ChatViewController.m */,
+				473090841D86EA8A006C13F6 /* ProfileViewController.h */,
+				473090851D86EA8A006C13F6 /* ProfileViewController.m */,
 			);
 			path = loginapp;
 			sourceTree = "<group>";
@@ -282,6 +327,7 @@
 			files = (
 				47B9287A1D6E18A5003864DC /* LaunchScreen.storyboard in Resources */,
 				470028D61D76130700410370 /* relation_1813297.gpx in Resources */,
+				470F28491D92DB090082E8CA /* TimelineTableViewCell.xib in Resources */,
 				47B928771D6E18A5003864DC /* Assets.xcassets in Resources */,
 				47B928751D6E18A5003864DC /* Main.storyboard in Resources */,
 			);
@@ -310,9 +356,14 @@
 			files = (
 				4743525D1D79B0BD005D3C29 /* RegisterViewController.m in Sources */,
 				47B928721D6E18A5003864DC /* ViewController.m in Sources */,
+				473090861D86EA8A006C13F6 /* ProfileViewController.m in Sources */,
 				47B9286F1D6E18A5003864DC /* AppDelegate.m in Sources */,
+				4748428B1D9442AC00150A55 /* TestViewController.m in Sources */,
 				47B9286C1D6E18A5003864DC /* main.m in Sources */,
 				473FED6D1D6EE5C70054A5CA /* MapViewController.m in Sources */,
+				473090831D86E59C006C13F6 /* ChatViewController.m in Sources */,
+				470F28441D92DA970082E8CA /* TimelineTableViewController.m in Sources */,
+				470F28481D92DB090082E8CA /* TimelineTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

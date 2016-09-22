@@ -144,7 +144,7 @@
     MKDirectionsRequest* directionRequest = [[MKDirectionsRequest alloc] init];
     directionRequest.source = [MKMapItem mapItemForCurrentLocation];
     
-    MKPlacemark* placemarkDestination = [[MKPlacemark alloc] initWithCoordinate:self.touchMapCoordinate addressDictionary:nil];
+    MKPlacemark* placemarkDestination = [[MKPlacemark alloc] initWithCoordinate:pointAnnotation.coordinate addressDictionary:nil];
     
     MKMapItem* destinationMapItem = [[MKMapItem alloc] initWithPlacemark:placemarkDestination];
     
@@ -220,7 +220,7 @@
     
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolylineRenderer* polylineRenderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
-        polylineRenderer.lineWidth = 2.f;
+        polylineRenderer.lineWidth = 3.f;
         polylineRenderer.strokeColor = [UIColor redColor];
         
         return polylineRenderer;
