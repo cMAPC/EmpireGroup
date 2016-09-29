@@ -1,7 +1,4 @@
 //
-//  MapViewController.h
-//  loginapp
-//
 //  Created by Mihaela Pacalau on 8/25/16.
 //  Copyright © 2016 Marcel Spinu. All rights reserved.
 //
@@ -21,5 +18,8 @@
 @property (strong, nonatomic) MKUserLocation* userLocation;
 @property (strong, nonatomic) UITextView* textView ;
 @property (assign, nonatomic) CLLocationCoordinate2D touchMapCoordinate;
+
+- (void) testMethod;
+- (void) buildPathAction:(UIButton*) sender;
 
 @end

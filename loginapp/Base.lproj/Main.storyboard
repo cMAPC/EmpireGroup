@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login View -->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Login View Controller" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Login View " id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,22 +18,21 @@
                                 <frame key="frameInset" minX="81" minY="319" width="213" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x9k-U9-MLt">
                                 <frame key="frameInset" minX="122" minY="362" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
-                                    <action selector="logInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XQE-aw-IlR"/>
-                                    <segue destination="Uco-vY-VVY" kind="modal" id="FCd-8d-d6o"/>
+                                    <action selector="logInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="on0-yN-sQM"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" id="vm1-tI-mQG">
                                 <frame key="frameInset" minX="81" minY="274" width="213" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dxq-VK-91p">
                                 <frame key="frameInset" minX="69" minY="408" width="151" height="21"/>
@@ -48,7 +47,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Register here"/>
                                 <connections>
-                                    <segue destination="MtS-jY-Xwf" kind="push" id="dj1-03-hRg"/>
+                                    <action selector="registerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BrV-Ce-sfh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,18 +55,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="hlg-Gg-YRd"/>
                     <connections>
-                        <outlet property="passwordField" destination="D7b-zb-fs6" id="xAp-7D-tYS"/>
-                        <outlet property="usernameField" destination="vm1-tI-mQG" id="Pre-6O-rA8"/>
+                        <outlet property="passwordField" destination="D7b-zb-fs6" id="0RA-fH-5er"/>
+                        <outlet property="usernameField" destination="vm1-tI-mQG" id="1Hn-kr-Mcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704.5" y="366.5"/>
         </scene>
-        <!--Timeline Table View Controller-->
+        <!--Timeline View-->
         <scene sceneID="WyW-BN-UCb">
             <objects>
-                <viewController id="TgU-10-jap" customClass="TimelineTableViewController" sceneMemberID="viewController">
+                <viewController title="Timeline View" id="TgU-10-jap" customClass="TimlineTableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OZQ-II-YzS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,8 +76,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="TgU-10-jap" id="R9j-wg-TEP"/>
-                                    <outlet property="delegate" destination="TgU-10-jap" id="gBt-ig-qAR"/>
+                                    <outlet property="dataSource" destination="TgU-10-jap" id="TEb-6B-ZGl"/>
+                                    <outlet property="delegate" destination="TgU-10-jap" id="pF6-TH-Xpt"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -86,17 +85,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="gRe-dt-w4H"/>
                     <connections>
-                        <outlet property="timelineTableView" destination="MFt-bs-wCU" id="Dpg-AB-hKb"/>
+                        <outlet property="timelineTableView" destination="MFt-bs-wCU" id="DpC-zN-mSB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ouy-dM-Xpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2181" y="-386"/>
+            <point key="canvasLocation" x="2180.5" y="-386.5"/>
         </scene>
-        <!--TestViewController-->
+        <!--Cell View-->
         <scene sceneID="DN8-4N-vd7">
             <objects>
-                <viewController storyboardIdentifier="TestViewController" title="TestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N1V-xZ-b0D" customClass="TestViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineCellViewControllerID" title="Cell View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N1V-xZ-b0D" customClass="TimelineCellViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VnI-IQ-Kcr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="2648" y="-386"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map View -->
         <scene sceneID="Gv1-90-2K7">
             <objects>
-                <viewController title="Map View Controller" id="231-xf-sNM" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" title="Map View " useStoryboardIdentifierAsRestorationIdentifier="YES" id="231-xf-sNM" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vUj-uu-pVa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="1700.5" y="366.5"/>
         </scene>
-        <!--Item-->
+        <!--Chat View-->
         <scene sceneID="zpO-Wu-H8S">
             <objects>
-                <viewController id="GR7-Nw-gnI" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController title="Chat View" id="GR7-Nw-gnI" customClass="ChatViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jm6-MN-ulL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="1177.5" y="1186.5"/>
         </scene>
-        <!--Item-->
+        <!--Profile View-->
         <scene sceneID="TZr-Te-3Dh">
             <objects>
-                <viewController id="75A-j1-0DI" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController title="Profile View" id="75A-j1-0DI" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rOg-JD-TMb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,19 +181,22 @@
             </objects>
             <point key="canvasLocation" x="1701" y="1187"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Register View-->
         <scene sceneID="p9R-LO-7lQ">
             <objects>
-                <viewController id="MtS-jY-Xwf" customClass="RegisterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewControllerID" title="Register View" id="MtS-jY-Xwf" customClass="RegisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZaP-YS-u1b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="IcB-6a-P8I">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" id="IcB-6a-P8I">
                                 <frame key="frameInset" minX="36" minY="123" width="302" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MtS-jY-Xwf" id="pXu-Q6-Cio"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9vc-nd-aeK">
                                 <frame key="frameInset" minX="36" minY="94" width="80" height="21"/>
@@ -203,11 +205,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Fg5-YC-hWb">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Fg5-YC-hWb">
                                 <frame key="frameInset" minX="36" minY="190" width="302" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MtS-jY-Xwf" id="d21-gk-1P1"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RWp-bY-Cdx">
                                 <frame key="frameInset" minX="36" minY="161" width="80" height="21"/>
@@ -216,11 +221,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="p4d-Sm-nh9">
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="p4d-Sm-nh9">
                                 <frame key="frameInset" minX="36" minY="257" width="302" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MtS-jY-Xwf" id="KNf-Yn-tmk"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Y5-IC-KlD">
                                 <frame key="frameInset" minX="36" minY="228" width="41" height="21"/>
@@ -229,11 +237,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="wYk-eh-evC">
+                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="wYk-eh-evC">
                                 <frame key="frameInset" minX="36" minY="324" width="302" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MtS-jY-Xwf" id="EnM-go-lk5"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mhG-oL-HNp">
                                 <frame key="frameInset" minX="36" minY="295" width="74" height="21"/>
@@ -242,11 +253,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="7a7-Tg-7i8">
+                            <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="7a7-Tg-7i8">
                                 <frame key="frameInset" minX="36" minY="391" width="302" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MtS-jY-Xwf" id="aoc-RH-UmL"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q6l-UX-Yye">
                                 <frame key="frameInset" minX="36" minY="362" width="97" height="21"/>
@@ -255,11 +269,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="cXk-qt-Wau">
+                            <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" id="cXk-qt-Wau">
                                 <frame key="frameInset" minX="36" minY="458" width="302" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MtS-jY-Xwf" id="uZo-SO-KSI"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ngq-fz-RIO">
                                 <frame key="frameInset" minX="36" minY="429" width="57" height="21"/>
@@ -283,12 +300,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVb-xN-uW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704.5" y="1186.5"/>
+            <point key="canvasLocation" x="705" y="1187"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabBar Controller-->
         <scene sceneID="LiP-Vl-sQ2">
             <objects>
-                <tabBarController id="Uco-vY-VVY" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UITabBarControllerID" title="TabBar Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uco-vY-VVY" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="EK2-Jb-0wI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -305,10 +322,10 @@
             </objects>
             <point key="canvasLocation" x="1177.5" y="366.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Login Navigation Controller-->
         <scene sceneID="l2R-WW-g3g">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dBF-HP-Xsz" sceneMemberID="viewController">
+                <navigationController title="Login Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="dBF-HP-Xsz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zUM-YD-UY0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -323,10 +340,10 @@
             </objects>
             <point key="canvasLocation" x="205.5" y="366.5"/>
         </scene>
-        <!--Item-->
+        <!--Timeline Navigation Controller-->
         <scene sceneID="fDn-36-uI1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OJi-9r-ANB" sceneMemberID="viewController">
+                <navigationController title="Timeline Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OJi-9r-ANB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Hp7-Bf-xuU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="209-v9-5bZ">
@@ -334,6 +351,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="EPF-uu-X1Y">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="TgU-10-jap" kind="relationship" relationship="rootViewController" id="sAV-Lc-Cxq"/>
                     </connections>

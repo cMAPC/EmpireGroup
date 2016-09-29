@@ -1,18 +1,21 @@
 //
-//  ViewController.m
-//  loginapp
-//
 //  Created by Mihaela Pacalau on 8/24/16.
 //  Copyright © 2016 Marcel Spinu. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
+#import "RegisterViewController.h"
 
-@interface ViewController ()
+@interface LoginViewController () {
+
+    NSString* usernameString;
+    NSString* passwordString;
+    NSDictionary* loginDictionary;
+}
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,11 +23,6 @@
     loginDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"user", nil]
                                                   forKeys:[NSArray arrayWithObjects:@"user", nil]];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Navigation Bar
@@ -45,23 +43,29 @@
     
     
     if ([[loginDictionary objectForKey: self.passwordField.text] isEqualToString:self.usernameField.text]) {
+        UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"UITabBarControllerID"];
+        [self presentViewController:tabBarController animated:YES completion:nil];
         NSLog(@"Succes");
-    } else {
+    }
+    else {
         NSLog(@"Unsucces");
-        NSLog(@"%@", self.usernameField.text);
-        NSLog(@"%@", self.passwordField.text);
         
         UIAlertController* loginErrorAlertController = [UIAlertController alertControllerWithTitle:@"Error Signing In"
                                                                                            message:@"The user name or password is incorrect"preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* loginErrorAlertAction = [UIAlertAction actionWithTitle:@"OK"
                                                                         style:UIAlertActionStyleDefault
-                                                                      handler:^(UIAlertAction* _Nonnull action) {
-                                                                      }];
+                                                                      handler:nil];
         
         [loginErrorAlertController addAction:loginErrorAlertAction];
         [self presentViewController:loginErrorAlertController animated:YES completion:nil];
     }
+}
+
+- (IBAction)registerButton:(UIButton *)sender {
+    
+    RegisterViewController* registerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterViewControllerID"];
+    [self.navigationController pushViewController:registerViewController animated:YES];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

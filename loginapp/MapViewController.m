@@ -1,7 +1,4 @@
 //
-//  MapViewController.m
-//  loginapp
-//
 //  Created by Mihaela Pacalau on 8/25/16.
 //  Copyright © 2016 Marcel Spinu. All rights reserved.
 //
@@ -9,7 +6,7 @@
 #import "MapViewController.h"
 #import <MapKit/MapKit.h>
 
-@interface MapViewController () <MKMapViewDelegate> {
+@interface MapViewController () <MKMapViewDelegate, UITabBarDelegate> {
 
     MKPointAnnotation* pointAnnotation;
     UILongPressGestureRecognizer* longPressGestureRecognizer;
@@ -19,6 +16,10 @@
 @end
 
 @implementation MapViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self.view setNeedsDisplay];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,8 +37,18 @@
     [longPressGestureRecognizer setMinimumPressDuration:0.5f];
     [self.mapView addGestureRecognizer:longPressGestureRecognizer];
     
+    
+   
+    
+//    [self.mapView setCenterCoordinate:testCoordinate animated:YES];
+    
 }
 
+- (void) testMethod {
+    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:self.touchMapCoordinate fromEyeCoordinate:CLLocationCoordinate2DMake(self.touchMapCoordinate.latitude, self.touchMapCoordinate.longitude) eyeAltitude:10000];
+    
+    [self.mapView setCamera:camera animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -47,6 +58,7 @@
 #pragma mark - Actions
 
 - (void) longPressGestureAction : (UILongPressGestureRecognizer*) longPressGestureRecongnizer {
+    
     
     CGPoint touchPoint = [longPressGestureRecongnizer locationInView:self.mapView];
     self.touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
@@ -145,6 +157,7 @@
     directionRequest.source = [MKMapItem mapItemForCurrentLocation];
     
     MKPlacemark* placemarkDestination = [[MKPlacemark alloc] initWithCoordinate:pointAnnotation.coordinate addressDictionary:nil];
+        placemarkDestination = [[MKPlacemark alloc] initWithCoordinate:_touchMapCoordinate addressDictionary:nil];
     
     MKMapItem* destinationMapItem = [[MKMapItem alloc] initWithPlacemark:placemarkDestination];
     
@@ -173,9 +186,9 @@
 #pragma mark - MKMapViewDelegate
 
 - (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
-    
-    [self.mapView setCamera:camera animated:YES];
+//    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
+//    
+//    [self.mapView setCamera:camera animated:YES];
     
 }
 
@@ -246,16 +259,6 @@
     [self.view endEditing:YES];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - Dealloc
 
