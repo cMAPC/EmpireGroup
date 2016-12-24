@@ -21,4 +21,10 @@
     // Configure the view for the selected state
 }
 
+
+-(void) setNewImage:(UIImage*) newImage {
+    
+    self.cellImage.image = newImage;
+}
+
 @end

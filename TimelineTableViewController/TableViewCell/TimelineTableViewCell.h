@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface TimelineTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
+@property (weak, nonatomic) IBOutlet UILabel *cellText;
+
+-(void) setNewImage:(UIImage*) newImage;
 
 @end

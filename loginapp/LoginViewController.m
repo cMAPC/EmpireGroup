@@ -5,6 +5,7 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "UserData.h"
 
 @interface LoginViewController () {
 
@@ -22,7 +23,9 @@
     
     loginDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"user", nil]
                                                   forKeys:[NSArray arrayWithObjects:@"user", nil]];
-    
+//    UserData* obj = [[UserData alloc] init];
+//    [obj methodTest];
+//    [obj postMethod];
 }
 
 #pragma mark - Navigation Bar

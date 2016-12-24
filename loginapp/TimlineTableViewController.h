@@ -4,7 +4,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TimelineTableViewCell.h"
 
 @interface TimlineTableViewController : UIViewController
+
+@property (weak, nonatomic) TimelineTableViewCell* prototypeCell;
 
 @end

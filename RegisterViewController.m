@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dateOfBirthTextField.tag = 6;
     
     genderPickerView = [[UIPickerView alloc] init];
     genderPickerView.delegate = self;
@@ -144,7 +145,7 @@
 
     NSInteger nextTag = textField.tag + 1;
     UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
-    
+
     if (nextResponder) {
         [nextResponder becomeFirstResponder];
     } else {

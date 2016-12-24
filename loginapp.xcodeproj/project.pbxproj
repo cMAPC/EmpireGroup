@@ -9,11 +9,23 @@
 /* Begin PBXBuildFile section */
 		470F28481D92DB090082E8CA /* TimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F28461D92DB090082E8CA /* TimelineTableViewCell.m */; };
 		470F28491D92DB090082E8CA /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470F28471D92DB090082E8CA /* TimelineTableViewCell.xib */; };
+		470FFD381D9D54400098B515 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 470FFD371D9D54400098B515 /* UserData.m */; };
+		470FFD431D9D6CA60098B515 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 470FFD421D9D6CA60098B515 /* Test.m */; };
 		473090831D86E59C006C13F6 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473090821D86E59C006C13F6 /* ChatViewController.m */; };
 		473090861D86EA8A006C13F6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473090851D86EA8A006C13F6 /* ProfileViewController.m */; };
+		473AB9B11DBA448A00AEB3F3 /* TimelineTableViewCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 473AB9B01DBA448A00AEB3F3 /* TimelineTableViewCellData.m */; };
+		473AB9B71DBA4D8500AEB3F3 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 473AB9B31DBA4D8500AEB3F3 /* image1.jpg */; };
+		473AB9B81DBA4D8500AEB3F3 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 473AB9B41DBA4D8500AEB3F3 /* image2.jpg */; };
+		473AB9B91DBA4D8500AEB3F3 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 473AB9B51DBA4D8500AEB3F3 /* image3.jpg */; };
+		473AB9BA1DBA4D8500AEB3F3 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 473AB9B61DBA4D8500AEB3F3 /* image4.jpg */; };
 		473FED621D6EE0CD0054A5CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473FED611D6EE0CD0054A5CA /* MapKit.framework */; };
 		473FED6D1D6EE5C70054A5CA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473FED6C1D6EE5C70054A5CA /* MapViewController.m */; };
 		473FED6F1D6EFD340054A5CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473FED6E1D6EFD340054A5CA /* CoreLocation.framework */; };
+		474267221DF6E6E600C5BE28 /* logo_text.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4742671F1DF6E6E600C5BE28 /* logo_text.jpeg */; };
+		474267231DF6E6E600C5BE28 /* logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 474267201DF6E6E600C5BE28 /* logo.jpeg */; };
+		474267241DF6E6E600C5BE28 /* top_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 474267211DF6E6E600C5BE28 /* top_image.jpeg */; };
+		474267261DF8124600C5BE28 /* top_image_signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 474267251DF8124600C5BE28 /* top_image_signUp.png */; };
+		474267281DFAEB7B00C5BE28 /* SingUpTopImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 474267271DFAEB7B00C5BE28 /* SingUpTopImage.png */; };
 		4743525D1D79B0BD005D3C29 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743525C1D79B0BD005D3C29 /* RegisterViewController.m */; };
 		4748428B1D9442AC00150A55 /* TimelineCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4748428A1D9442AC00150A55 /* TimelineCellViewController.m */; };
 		474842C51D94914F00150A55 /* TimlineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474842C41D94914F00150A55 /* TimlineTableViewController.m */; };
@@ -23,6 +35,7 @@
 		47B928771D6E18A5003864DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B928761D6E18A5003864DC /* Assets.xcassets */; };
 		47B9287A1D6E18A5003864DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B928781D6E18A5003864DC /* LaunchScreen.storyboard */; };
 		47BB999D1D9718B200F070B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BB999B1D9718B200F070B2 /* Main.storyboard */; };
+		FB89EB318304E6C356C9E240 /* libPods-loginapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D636FAB572785E43ADAD693E /* libPods-loginapp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,14 +59,33 @@
 		470F28451D92DB090082E8CA /* TimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCell.h; sourceTree = "<group>"; };
 		470F28461D92DB090082E8CA /* TimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewCell.m; sourceTree = "<group>"; };
 		470F28471D92DB090082E8CA /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
+		470FFD361D9D54400098B515 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		470FFD371D9D54400098B515 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		470FFD391D9D60670098B515 /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/Mantle/libMantle.a"; sourceTree = "<group>"; };
+		470FFD3B1D9D63790098B515 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
+		470FFD3C1D9D63790098B515 /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/Mantle/libMantle.a"; sourceTree = "<group>"; };
+		470FFD3F1D9D65790098B515 /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/libMantle.a"; sourceTree = "<group>"; };
+		470FFD411D9D6CA60098B515 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		470FFD421D9D6CA60098B515 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		473090811D86E59C006C13F6 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = ../ChatViewController.h; sourceTree = "<group>"; };
 		473090821D86E59C006C13F6 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewController.m; path = ../ChatViewController.m; sourceTree = "<group>"; };
 		473090841D86EA8A006C13F6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
 		473090851D86EA8A006C13F6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
+		473AB9AF1DBA448A00AEB3F3 /* TimelineTableViewCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCellData.h; sourceTree = "<group>"; };
+		473AB9B01DBA448A00AEB3F3 /* TimelineTableViewCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewCellData.m; sourceTree = "<group>"; };
+		473AB9B31DBA4D8500AEB3F3 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		473AB9B41DBA4D8500AEB3F3 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		473AB9B51DBA4D8500AEB3F3 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
+		473AB9B61DBA4D8500AEB3F3 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
 		473FED611D6EE0CD0054A5CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		473FED6B1D6EE5C70054A5CA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		473FED6C1D6EE5C70054A5CA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		473FED6E1D6EFD340054A5CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4742671F1DF6E6E600C5BE28 /* logo_text.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_text.jpeg; sourceTree = "<group>"; };
+		474267201DF6E6E600C5BE28 /* logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpeg; sourceTree = "<group>"; };
+		474267211DF6E6E600C5BE28 /* top_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = top_image.jpeg; sourceTree = "<group>"; };
+		474267251DF8124600C5BE28 /* top_image_signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_image_signUp.png; sourceTree = "<group>"; };
+		474267271DFAEB7B00C5BE28 /* SingUpTopImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SingUpTopImage.png; sourceTree = "<group>"; };
 		4743525B1D79B0BD005D3C29 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../RegisterViewController.h; sourceTree = "<group>"; };
 		4743525C1D79B0BD005D3C29 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ../RegisterViewController.m; sourceTree = "<group>"; };
 		474842891D9442AC00150A55 /* TimelineCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimelineCellViewController.h; path = ../TimelineCellViewController.h; sourceTree = "<group>"; };
@@ -72,6 +104,10 @@
 		47B928801D6E18A5003864DC /* loginappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = loginappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B9288B1D6E18A5003864DC /* loginappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = loginappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47BB999C1D9718B200F070B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2D48F82F2DD758AC7A50571 /* Pods-loginapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-loginapp/Pods-loginapp.debug.xcconfig"; sourceTree = "<group>"; };
+		B1B544158C96EB6D6430D91A /* libPods-loginapp-loginappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-loginapp-loginappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1B8716E41D12C25B281D607 /* Pods-loginapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-loginapp/Pods-loginapp.release.xcconfig"; sourceTree = "<group>"; };
+		D636FAB572785E43ADAD693E /* libPods-loginapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-loginapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +117,7 @@
 			files = (
 				473FED6F1D6EFD340054A5CA /* CoreLocation.framework in Frameworks */,
 				473FED621D6EE0CD0054A5CA /* MapKit.framework in Frameworks */,
+				FB89EB318304E6C356C9E240 /* libPods-loginapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +138,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		027A927FB6F6BAB16306EFE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				470FFD3F1D9D65790098B515 /* libMantle.a */,
+				470FFD3B1D9D63790098B515 /* libAFNetworking.a */,
+				470FFD3C1D9D63790098B515 /* libMantle.a */,
+				470FFD391D9D60670098B515 /* libMantle.a */,
+				D636FAB572785E43ADAD693E /* libPods-loginapp.a */,
+				B1B544158C96EB6D6430D91A /* libPods-loginapp-loginappTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		470F28401D92DA170082E8CA /* TimelineTableViewController */ = {
 			isa = PBXGroup;
 			children = (
 				474842C31D94914F00150A55 /* TimlineTableViewController.h */,
 				474842C41D94914F00150A55 /* TimlineTableViewController.m */,
 				470F28411D92DA170082E8CA /* TableViewCell */,
+				473AB9AE1DBA445C00AEB3F3 /* TableViewCellData */,
 			);
 			name = TimelineTableViewController;
 			path = ../TimelineTableViewController;
@@ -129,6 +180,31 @@
 				473FED611D6EE0CD0054A5CA /* MapKit.framework */,
 			);
 			name = "Framework's";
+			sourceTree = "<group>";
+		};
+		473AB9AE1DBA445C00AEB3F3 /* TableViewCellData */ = {
+			isa = PBXGroup;
+			children = (
+				473AB9AF1DBA448A00AEB3F3 /* TimelineTableViewCellData.h */,
+				473AB9B01DBA448A00AEB3F3 /* TimelineTableViewCellData.m */,
+			);
+			path = TableViewCellData;
+			sourceTree = "<group>";
+		};
+		473AB9B21DBA4D8500AEB3F3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				474267251DF8124600C5BE28 /* top_image_signUp.png */,
+				474267271DFAEB7B00C5BE28 /* SingUpTopImage.png */,
+				4742671F1DF6E6E600C5BE28 /* logo_text.jpeg */,
+				474267201DF6E6E600C5BE28 /* logo.jpeg */,
+				474267211DF6E6E600C5BE28 /* top_image.jpeg */,
+				473AB9B31DBA4D8500AEB3F3 /* image1.jpg */,
+				473AB9B41DBA4D8500AEB3F3 /* image2.jpg */,
+				473AB9B51DBA4D8500AEB3F3 /* image3.jpg */,
+				473AB9B61DBA4D8500AEB3F3 /* image4.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		474842C21D9487BF00150A55 /* ViewController's */ = {
@@ -154,9 +230,16 @@
 		47B9285E1D6E18A5003864DC = {
 			isa = PBXGroup;
 			children = (
+				470FFD411D9D6CA60098B515 /* Test.h */,
+				470FFD421D9D6CA60098B515 /* Test.m */,
+				470FFD361D9D54400098B515 /* UserData.h */,
+				470FFD371D9D54400098B515 /* UserData.m */,
+				473AB9B21DBA4D8500AEB3F3 /* images */,
 				47B928691D6E18A5003864DC /* loginapp */,
 				4730907D1D86DD2D006C13F6 /* Framework's */,
 				47B928681D6E18A5003864DC /* Products */,
+				D2C80BE59C205600B3CA2EB9 /* Pods */,
+				027A927FB6F6BAB16306EFE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +276,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D2C80BE59C205600B3CA2EB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2D48F82F2DD758AC7A50571 /* Pods-loginapp.debug.xcconfig */,
+				B1B8716E41D12C25B281D607 /* Pods-loginapp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,9 +292,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47B928941D6E18A5003864DC /* Build configuration list for PBXNativeTarget "loginapp" */;
 			buildPhases = (
+				A11C77DDDC2D048CD051C415 /* [CP] Check Pods Manifest.lock */,
 				47B928631D6E18A5003864DC /* Sources */,
 				47B928641D6E18A5003864DC /* Frameworks */,
 				47B928651D6E18A5003864DC /* Resources */,
+				3390AC61A12B96DFDB6A7B2D /* [CP] Embed Pods Frameworks */,
+				219BE3147581278FE54F2B88 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,9 +403,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474267231DF6E6E600C5BE28 /* logo.jpeg in Resources */,
+				474267281DFAEB7B00C5BE28 /* SingUpTopImage.png in Resources */,
+				474267261DF8124600C5BE28 /* top_image_signUp.png in Resources */,
+				473AB9BA1DBA4D8500AEB3F3 /* image4.jpg in Resources */,
 				47B9287A1D6E18A5003864DC /* LaunchScreen.storyboard in Resources */,
+				473AB9B71DBA4D8500AEB3F3 /* image1.jpg in Resources */,
 				470F28491D92DB090082E8CA /* TimelineTableViewCell.xib in Resources */,
 				47B928771D6E18A5003864DC /* Assets.xcassets in Resources */,
+				473AB9B81DBA4D8500AEB3F3 /* image2.jpg in Resources */,
+				473AB9B91DBA4D8500AEB3F3 /* image3.jpg in Resources */,
+				474267241DF6E6E600C5BE28 /* top_image.jpeg in Resources */,
+				474267221DF6E6E600C5BE28 /* logo_text.jpeg in Resources */,
 				47BB999D1D9718B200F070B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +435,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		219BE3147581278FE54F2B88 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-loginapp/Pods-loginapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3390AC61A12B96DFDB6A7B2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-loginapp/Pods-loginapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A11C77DDDC2D048CD051C415 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		47B928631D6E18A5003864DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -341,11 +493,14 @@
 				473090861D86EA8A006C13F6 /* ProfileViewController.m in Sources */,
 				47B9286F1D6E18A5003864DC /* AppDelegate.m in Sources */,
 				4748428B1D9442AC00150A55 /* TimelineCellViewController.m in Sources */,
+				473AB9B11DBA448A00AEB3F3 /* TimelineTableViewCellData.m in Sources */,
 				47B9286C1D6E18A5003864DC /* main.m in Sources */,
 				474842C51D94914F00150A55 /* TimlineTableViewController.m in Sources */,
 				473FED6D1D6EE5C70054A5CA /* MapViewController.m in Sources */,
 				473090831D86E59C006C13F6 /* ChatViewController.m in Sources */,
+				470FFD431D9D6CA60098B515 /* Test.m in Sources */,
 				470F28481D92DB090082E8CA /* TimelineTableViewCell.m in Sources */,
+				470FFD381D9D54400098B515 /* UserData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,27 +639,39 @@
 		};
 		47B928951D6E18A5003864DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2D48F82F2DD758AC7A50571 /* Pods-loginapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = loginapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcelspinu.loginapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		47B928961D6E18A5003864DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1B8716E41D12C25B281D607 /* Pods-loginapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = loginapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcelspinu.loginapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
