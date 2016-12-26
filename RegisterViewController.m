@@ -4,6 +4,8 @@
 //
 
 #import "RegisterViewController.h"
+#import "LoginViewController.h"
+#import "Utilities.h"
 
 @interface RegisterViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate> {
     
@@ -21,10 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dateOfBirthTextField.tag = 6;
     
     genderPickerView = [[UIPickerView alloc] init];
     genderPickerView.delegate = self;
+    
     genderPickerViewDataArray = [[NSMutableArray alloc] initWithObjects:
                                  @"Male",
                                  @"Female",
@@ -145,6 +147,7 @@
 
     NSInteger nextTag = textField.tag + 1;
     UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+//    UIResponder* nextResponder1 = [textField.DateOfBirthView viewWithTag:nextTag];
 
     if (nextResponder) {
         [nextResponder becomeFirstResponder];
@@ -190,6 +193,16 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
+- (IBAction)backToLoginAction:(id)sender {
+    
+    LoginViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewControllerID"];
+    [self presentViewController:loginViewController animated:YES completion:nil];
+}
+
+-(void)viewDidLayoutSubviews {
+    [Utilities setGradientForImage:self.singUpImage];
+}
 
 @end
 

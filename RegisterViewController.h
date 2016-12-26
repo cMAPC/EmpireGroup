@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateOfBirthTextField;
 @property (weak, nonatomic) IBOutlet UITextField *genderTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
-
+- (IBAction)backToLoginAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *singUpImage;
 
 @end

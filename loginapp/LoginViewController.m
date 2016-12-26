@@ -5,6 +5,7 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "Utilities.h"
 #import "UserData.h"
 
 @interface LoginViewController () {
@@ -26,6 +27,11 @@
 //    UserData* obj = [[UserData alloc] init];
 //    [obj methodTest];
 //    [obj postMethod];
+}
+
+-(void)viewDidLayoutSubviews{
+
+    [Utilities setGradientForImage:self.singInImage];
 }
 
 #pragma mark - Navigation Bar
@@ -68,7 +74,8 @@
 - (IBAction)registerButton:(UIButton *)sender {
     
     RegisterViewController* registerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterViewControllerID"];
-    [self.navigationController pushViewController:registerViewController animated:YES];
+    [self presentViewController:registerViewController animated:YES completion:nil];
+//    [self.navigationController pushViewController:registerViewController animated:YES];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
